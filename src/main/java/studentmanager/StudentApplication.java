@@ -1,13 +1,9 @@
-package studentmanager.demo;
-
-import java.util.ArrayList;
-import java.util.List;
+package studentmanager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,10 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @SpringBootApplication
-public class DemoApplication {
+public class StudentApplication {
 	
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(StudentApplication.class, args);
 		System.out.print("hello");
 	}
     // // API Hello
@@ -54,27 +50,27 @@ public class DemoApplication {
     
     // Trả về JSON Objeact
     // URL: http://localhost:8080/api/students
-    @GetMapping("/students")
-    public Student getStudent () {
-        return new Student(1, "Trần Thị Lệ ", 20);
-    }
+    // @GetMapping("/students")
+    // public Student getStudent () {
+    //     return new Student(1, "Trần Thị Lệ ", 20);
+    // }
 
-    // Trả về danh sách
-    //URL: // URL: http://localhost:8080/api/studentall
-    @GetMapping("/studentall")
-    public List<Student> getStudents() {
-        List<Student> list = new ArrayList<>();
-        list.add(new Student(1, "Quỳnh",20));
-        list.add(new Student(2, "Sơn", 20));
-        list.add(new Student(3, "Trang", 20));
-        return list;
-    }
+    // // Trả về danh sách
+    // //URL: // URL: http://localhost:8080/api/studentall
+    // @GetMapping("/studentall")
+    // public List<Student> getStudents() {
+    //     List<Student> list = new ArrayList<>();
+    //     list.add(new Student(1, "Quỳnh",20));
+    //     list.add(new Student(2, "Sơn", 20));
+    //     list.add(new Student(3, "Trang", 20));
+    //     return list;
+    // }
 
-    // ResquesHeader
-    // URL: http://localhost/8080/api/getstudent
-    @GetMapping("/getstudent")
-    public  String getStudents(
-        @RequestHeader("Authorization") String authorization) {
-            return "Authorization = " + authorization;
-        }
+    // // ResquesHeader
+    // // URL: http://localhost/8080/api/getstudent
+    // @GetMapping("/getstudent")
+    // public  String getStudents(
+    //     @RequestHeader("Authorization") String authorization) {
+    //         return "Authorization = " + authorization;
+    //     }
 }
